@@ -15,6 +15,7 @@ export class HttpServiceService {
 
   private pointsUrl = 'http://localhost:5000/village/village';  // URL to web api
   private treesUrl = 'http://localhost:5000/tree/tree';
+  private terrainUrl = 'http://localhost:5000/terrain/terrain'
 
   getRabbits(): Observable<object[]> {
     return this.http.get<object[]>(this.pointsUrl);//.pipe(
@@ -26,6 +27,10 @@ export class HttpServiceService {
     return this.http.get<object[]>(this.treesUrl);//.pipe(
    //   tap(heroes => console.log('fetched heroes')), catchError(this.handleError('getHeroes', "errer")));
 
+  }
+
+  getTerrain(): Observable<object>   {
+    return this.http.get<object>(this.terrainUrl);
   }
 
 
